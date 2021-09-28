@@ -23,7 +23,7 @@ public class Main {
                         new MenuAction(new MenuItem(1, "Informar o nome dos jogadores"), playersInfo), // @TO-DO
                         new MenuAction(new MenuItem(2, "Informar o número de rodadas"), roundInfo),
                         new MenuAction(new MenuItem(3, "Jogar"), new Play(playersInfo.players, roundInfo)),
-                        new MenuAction(new MenuItem(4, "Sobre o jogo"), new Exit()), // @TO-DO
+                        new MenuAction(new MenuItem(4, "Sobre o jogo"), new About()),
                         new MenuAction(new MenuItem(5, "Exit"), new Exit()),
                 };
 
