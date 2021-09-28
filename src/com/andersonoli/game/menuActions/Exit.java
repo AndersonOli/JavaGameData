@@ -1,4 +1,4 @@
-package com.andersonoli.game;
+package com.andersonoli.game.menuActions;
 
 import com.andersonoli.game.interfaces.IGameAction;
 

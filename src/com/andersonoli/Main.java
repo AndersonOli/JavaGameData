@@ -1,17 +1,14 @@
 package com.andersonoli;
 
 
-import com.andersonoli.game.Exit;
-import com.andersonoli.game.interfaces.IGameAction;
+import com.andersonoli.game.Data;
+import com.andersonoli.game.Player;
+import com.andersonoli.game.Round;
+import com.andersonoli.game.menuActions.Exit;
 import com.andersonoli.menu.Menu;
 import com.andersonoli.menu.MenuAction;
 import com.andersonoli.menu.MenuHandle;
 import com.andersonoli.menu.MenuItem;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
 
@@ -24,6 +21,15 @@ public class Main {
                 new MenuAction(new MenuItem(1, "Exit"), new Exit()),
                 new MenuAction(new MenuItem(5, "Exit"), new Exit()),
             };
+
+            Player[] players = {
+                new Player("Anderson"),
+                new Player("Zé"),
+            };
+
+            Round round = new Round(players, 1);
+
+            round.execRound();
 
             // Menu of the game
             Menu gameDataMenu = new Menu(MenuHandle.getInstance(actions));
