@@ -13,6 +13,8 @@ public class Menu implements IMenu {
     public void showMenu() {
         MenuAction[] actions = this.handle.actions;
 
+        System.out.println("\nMenu\n");
+
         for (MenuAction action : actions) {
             action.item.showItem();
         }

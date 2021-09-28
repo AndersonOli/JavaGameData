@@ -1,9 +1,7 @@
 package com.andersonoli;
 
 
-import com.andersonoli.game.Data;
-import com.andersonoli.game.Player;
-import com.andersonoli.game.Round;
+import com.andersonoli.game.*;
 import com.andersonoli.game.menuActions.Exit;
 import com.andersonoli.menu.Menu;
 import com.andersonoli.menu.MenuAction;
@@ -16,29 +14,33 @@ public class Main {
         // Setup and start of the GameData
         try {
             // setup
-            // Action's list menu
-            MenuAction[] actions = {
-                new MenuAction(new MenuItem(1, "Exit"), new Exit()),
-                new MenuAction(new MenuItem(5, "Exit"), new Exit()),
-            };
+            PlayerInfo playersInfo = new PlayerInfo();
+            RoundInfo roundInfo = new RoundInfo();
 
-            Player[] players = {
-                new Player("Anderson"),
-                new Player("Zé"),
-            };
+            while(true){
+                // Action's list menu
+                MenuAction[] actions = {
+                        new MenuAction(new MenuItem(1, "Informar o nome dos jogadores"), playersInfo), // @TO-DO
+                        new MenuAction(new MenuItem(2, "Informar o número de rodadas"), roundInfo),
+                        new MenuAction(new MenuItem(3, "Jogar"), new Play(playersInfo.players, roundInfo)),
+                        new MenuAction(new MenuItem(4, "Sobre o jogo"), new Exit()), // @TO-DO
+                        new MenuAction(new MenuItem(5, "Exit"), new Exit()),
+                };
 
-            Round round = new Round(players, 1);
+                // Menu of the game
+                Menu gameDataMenu = new Menu(MenuHandle.getInstance(actions));
 
-            round.execRound();
-
-            // Menu of the game
-            Menu gameDataMenu = new Menu(MenuHandle.getInstance(actions));
-
-            // start game
-            gameDataMenu.showMenu();
-            gameDataMenu.runHandle();
+                // start game
+                gameDataMenu.showMenu();
+                gameDataMenu.runHandle();
+            }
         } catch (Exception error) {
             System.out.println(error.getMessage());
         }
+    }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }

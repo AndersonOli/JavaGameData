@@ -2,7 +2,6 @@ package com.andersonoli.menu;
 
 import com.andersonoli.menu.interfaces.IMenuHandle;
 
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 

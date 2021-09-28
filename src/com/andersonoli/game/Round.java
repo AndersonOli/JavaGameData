@@ -39,8 +39,8 @@ public class Round implements IRound {
             }
 
             System.out.printf(
-                    "\n\t[Game] - O Jogador %s faturou %d pontos nessa rodada!\n\n",
-                    player.name, player.points
+                "\n\t[Game] - O Jogador %s faturou %d pontos até agora!\n\n",
+                player.name, player.points
             );
         }
     }

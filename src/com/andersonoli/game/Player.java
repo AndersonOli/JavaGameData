@@ -31,4 +31,8 @@ public class Player implements IPlayer {
     public void setPoints(Integer value) {
         this.points += value;
     }
+
+    public void setName(String value) {
+        this.name = value;
+    }
 }
